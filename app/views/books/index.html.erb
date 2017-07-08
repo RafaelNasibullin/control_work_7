@@ -6,8 +6,8 @@
   <% @books.each do |book| %>
     <div class="col-md-5 thumbnail">
       <div class="row">
-        <div class="col-md-4">
-          <img src="" alt="">
+        <div class="col-md-4 image_block">
+          <%= image_tag book.image.url(:medium) %>
         </div>
         <div class="col-md-8">
           <h3><%= link_to book.title, book_path(book) %></h3>

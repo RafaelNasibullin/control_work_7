@@ -11,6 +11,8 @@
 										password: 'qweqwe',
 										password_confirmation: 'qweqwe',
 										status: true)
+@avatar = Avatar.create!(image: Faker::Company.logo,
+													 user: @user)
 @admin = User.create!(name: 'Admin', 
 										email: 'admin@mail.ru', 
 										password: 'qweqwe',
@@ -26,7 +28,12 @@
 											description: Faker::Lorem.sentence(10),
 											user: @user,
 											status: true,
-											agreement: true)
+											agreement: true,
+											image: Faker::Company.logo)
 	@book.categories << @category
 	@book.authors << @author
+	4.times do
+		@cover = Cover.create!(image: Faker::Company.logo,
+													 book: @book)
+	end
 end

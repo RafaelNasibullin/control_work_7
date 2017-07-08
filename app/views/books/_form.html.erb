@@ -5,8 +5,8 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :agreement %>
-    <%= f.input :status %>
-    <%= f.association :user %>
+    <%= f.input :image, as: :file %>
+    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id }%>
     <%= f.association :categories %>
     <%= f.association :authors %>
   </div>

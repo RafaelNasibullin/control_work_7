@@ -8,6 +8,18 @@
 	}
 	.thumbnail{
 	margin-left:40px;
-	height: 280px;
+	}
+	.image_block{
+		margin-top: 10%;
+		img{
+		width:100%;
+		margin: auto 0;
+		}
+	}
+	.information-block{
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		margin-top:10px;
+		margin-bottom:10px;
 	}
 }

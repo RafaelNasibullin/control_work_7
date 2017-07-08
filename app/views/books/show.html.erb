@@ -1,29 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
-
-<p>
-  <strong>Agreement:</strong>
-  <%= @book.agreement %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @book.status %>
-</p>
-
-<p>
-  <strong>Profile:</strong>
-  <%= @book.user %>
-</p>
+<div class="row">
+  <div class="col-md-2">
+    <h3><%= @book.title %></h3>
+    <%= image_tag @book.image.url(:thumb) %>
+  </div>
+  <div class="col-md-10">
+    <br>
+    <p><%= @book.description %></p>
+    <p>
+      <% @book.covers.each do |cover| %>
+        <span><%= image_tag cover.image.url(:thumb) %></span>
+      <% end %>
+    </p>
+  </div>
+</div>
+<div class="row information-block">
+  <h5>Information</h5>
+  <p>Created: <%= @book.user.name %></p>
+  <p>Category: 
+  <% @book.categories.each do |category| %>
+    <%= link_to category.title, category_path(category) %> 
+  <% end %>
+  </p>
+  <p>Author: 
+  <% @book.authors.each do |author| %>
+    <%= link_to author.name, author_path(author) %> 
+  <% end %>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
