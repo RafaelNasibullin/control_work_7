@@ -1,35 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
+<h1 class="text-center">Books</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Agreement</th>
-      <th>Status</th>
-      <th>Profile</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.description %></td>
-        <td><%= book.agreement %></td>
-        <td><%= book.status %></td>
-        <td><%= book.profile %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="row">
+  <% @books.each do |book| %>
+    <div class="col-md-5 thumbnail">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="" alt="">
+        </div>
+        <div class="col-md-8">
+          <h3><%= link_to book.title, book_path(book) %></h3>
+          <p><%= book.description %></p>
+          <p><%= book.user.name %></p>
+          <p>*****</p>
+          <p>photos.count</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to 'New Book', new_book_path %>

@@ -1,2 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.main-page{
+	padding: 50px;
+	form{
+	width: 20%;
+	}
+	.thumbnail{
+	margin-left:40px;
+	height: 280px;
+	}
+}

@@ -16,6 +16,10 @@ gem 'puma', '~> 3.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 gem 'simple_form'
+gem 'faker'
+gem 'devise'
+gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'cancancan', '~> 1.10'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

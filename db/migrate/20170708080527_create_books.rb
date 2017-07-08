@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.text :description
       t.boolean :agreement
       t.boolean :status, default: false
-      t.references :profile, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
