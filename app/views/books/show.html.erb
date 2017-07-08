@@ -28,6 +28,20 @@
     <%= link_to author.name, author_path(author) %> 
   <% end %>
   </p>
+  <p>Book rating: <%= @book.comments.average(:rate) %></p>
+  <p>Book rating: <%= @book.comments.average(:rate) %></p>
+</div>
+
+<div>
+  <h2><%= link_to 'Comments', '#', id: 'comments-link' %></h2>
+  <div id="comment-section">
+    <ol id="comments">
+      <%= render @book.comments %>
+    </ol>
+
+    <h3>Add a comment:</h3>
+    <%= render 'comments/form' %>
+  </div>
 </div>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

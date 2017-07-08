@@ -3,6 +3,7 @@ class Book < ApplicationRecord
   has_and_belongs_to_many :authors
   has_and_belongs_to_many :categories
   has_many :covers
+  has_many :comments
 
   validates :title, presence: true, length: {in: 2..50}
   validates :description, presence: true, length: {in: 2..300}

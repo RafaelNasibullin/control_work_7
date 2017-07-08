@@ -9,6 +9,8 @@ class Ability
         can :manage, :all
       else
         can :read, Book
+        can :read, Category
+        can :read, Author
       end
     #
     # The first argument to `can` is the action you are giving the user

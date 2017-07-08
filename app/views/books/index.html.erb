@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<p>Categories:
+  <% @categories.each do |category| %>
+    <span><%= link_to category.title, category_path(category) %></span>
+  <% end %>
+</p>
+
 <h1 class="text-center">Books</h1>
 
 <div class="row">
@@ -13,8 +19,8 @@
           <h3><%= link_to book.title, book_path(book) %></h3>
           <p><%= book.description %></p>
           <p><%= book.user.name %></p>
-          <p>*****</p>
-          <p>photos.count</p>
+          <p>Book rating: <%= book.comments.average(:rate) %></p>
+          <p>Photos: <%= book.covers.count %></p>
         </div>
       </div>
     </div>
