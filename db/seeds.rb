@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+20.times do
+		rand(1..4).times do
+			@category = Category.create!(title: Faker::Book.genre)
+			@author = Author.create!(name: Faker::Book.author)
+			@book = Book.create!(title: Faker::Book.title,
+													 description: Faker::Lorem.sentence(10),
+													 status: true, agreement: true,
+													 categories: [Category.last],
+													 authors: [Author.last] )
+		end
+end

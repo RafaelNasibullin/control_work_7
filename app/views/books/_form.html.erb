@@ -6,9 +6,9 @@
     <%= f.input :description %>
     <%= f.input :agreement %>
     <%= f.input :status %>
-    <%= f.association :profile %>
-    <%= f.association :categories %>
-    <%= f.association :authors %>
+    <%# f.association :profile %>
+    <%= f.association :categories, as: :select %>
+    <%= f.association :authors, as: :select %>
   </div>
 
   <div class="form-actions">

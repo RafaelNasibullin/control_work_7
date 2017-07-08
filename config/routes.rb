@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  devise_for :profiles
+	root 'books#index'
   resources :authors
   resources :categories
   resources :books
