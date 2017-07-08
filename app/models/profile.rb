@@ -4,4 +4,6 @@ class Profile < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	validates :name, presence: true, length: {in: 5..50}
+
+	has_many :books
 end

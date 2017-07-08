@@ -6,15 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+@profile = Profile.create!(name: 'Danil', email: 'danil@mail.ru', password: 'qweqwe', password_confirmation: 'qweqwe')
 20.times do
 		rand(1..4).times do
 			@category = Category.create!(title: Faker::Book.genre)
 			@author = Author.create!(name: Faker::Book.author)
 			@book = Book.create!(title: Faker::Book.title,
-													 description: Faker::Lorem.sentence(10),
+													 description: Faker::Lorem.sentence(13),
 													 status: true, agreement: true,
 													 categories: [Category.last],
-													 authors: [Author.last] )
+													 authors: [Author.last],
+													 profile: @profile )
 		end
 end

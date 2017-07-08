@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170708090647) do
     t.text     "description"
     t.boolean  "agreement"
     t.boolean  "status",      default: false
-    t.integer  "profile_id",  default: 0
+    t.integer  "profile_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["profile_id"], name: "index_books_on_profile_id"
