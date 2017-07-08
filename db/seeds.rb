@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@profile = Profile.create!(name: 'Danil',
+@user = User.create!(name: 'Danil',
 													 email: 'danil@mail.ru',
 													 password: 'qweqwe',
 													 password_confirmation: 'qweqwe')
-@admin = Profile.create!(name: 'Admin', email: 'admin@mail.ru',
+@admin = User.create!(name: 'Admin', email: 'admin@mail.ru',
 												 password: 'qweqwe',
 												 password_confirmation: 'qweqwe',
 												 admin: true,
@@ -24,6 +24,6 @@
 													 status: true, agreement: true,
 													 categories: [Category.last],
 													 authors: [Author.last],
-													 profile: @profile )
+													 profile: @user )
 		end
 end
